@@ -6,18 +6,21 @@ const isDev = require('electron-is-dev');
 
 let mainWindow;
 
+
 createWindow = () => {
+	let icon = path.join(__dirname, '/assets/icons/png/64x64.png');
 	mainWindow = new BrowserWindow({
 		backgroundColor: '#F7F7F7',
 		minWidth: 880,
 		show: false,
-		titleBarStyle: 'hidden',
+		//titleBarStyle: 'hidden',
 		webPreferences: {
 			nodeIntegration: false,
-			preload: __dirname + '/preload.js',
+			//preload: __dirname + '/preload.js',
 		},
 		height: 860,
 		width: 1280,
+		icon: icon
 	});
 
 	mainWindow.loadURL(
